@@ -68,3 +68,6 @@ cancel(); // Called at t = 25
 // t = 30: i is still 2
 ```
 
+We can do a similar thing for cancellable setTimeout() also by using a clearTimeout().
+
+---
