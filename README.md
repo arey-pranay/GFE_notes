@@ -45,3 +45,26 @@ Array.prototype.square = function () {
 };
 ```
 
+---
+This is how you make a cancel-able interval
+```
+export default function setCancellableInterval(callback, delay, ...args) {
+  const id = setInterval(callback,delay,...args);
+  return function cancel(){
+    clearInterval(id);
+  }
+}
+```
+and use it as:
+```
+let i = 0;
+// t = 0:
+const cancel = setCancellableInterval(() => {
+  i++;
+}, 10);
+// t = 10: i is 1
+// t = 20: i is 2
+cancel(); // Called at t = 25
+// t = 30: i is still 2
+```
+
