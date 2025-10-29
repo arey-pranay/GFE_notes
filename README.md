@@ -36,4 +36,12 @@ greeting();
 
 You can also make the synchronous version, using while loop, but it will block the main thread, and will print Hello, then at t=2000 it will print Bye then it will go to the setInterval to print Tick every half a second.
 
+---
+
+This is how you add methods to all the datatypes or write polyfills to update prototype method(s): 
+```
+Array.prototype.square = function () {
+  return this.map((el)=>el*el);
+};
+```
 
