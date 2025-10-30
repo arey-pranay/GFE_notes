@@ -85,5 +85,6 @@ difference([1, , 3], [1]); // => [3]
  The values false, null, 0, '', undefined, and NaN are falsey (you should know this by heart!)
  This is how you remove all falsey values from an array. `   const ans = array.filter((el)=> return !!el); `
 
+--- 
  Bonus: This is how you run an empty loop -   `while(start>=0 && predicate(array[start],start--,array)) {};`
  
