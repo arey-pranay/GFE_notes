@@ -71,3 +71,17 @@ cancel(); // Called at t = 25
 We can do a similar thing for cancellable setTimeout() also by using a clearTimeout().
 
 ---
+
+This is how you write a function to chunk an array into smaller arrays of given any size 
+` for(let i=0;i<array.length;i+=size) ans.push((array.slice(i, i+size)))  `
+
+This is how you get difference of 2 arrays. Remove the `values` array elements from the `array` array elements:
+` const ans = array.filter((el) => return !values.includes(el)) `
+This is somehow handles cases of sparse array by not removing empty elements 
+difference([1, , 3], [1]); // => [3]
+
+
+---
+ The values false, null, 0, '', undefined, and NaN are falsey (you should know this by heart!)
+ This is how you remove all falsey values from an array. `   const ans = array.filter((el)=> return !!el); `
+ 
