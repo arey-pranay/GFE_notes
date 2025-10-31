@@ -88,3 +88,17 @@ difference([1, , 3], [1]); // => [3]
 --- 
  Bonus: This is how you run an empty loop -   `while(start>=0 && predicate(array[start],start--,array)) {};`
  
+---
+
+A proper way to handle negative indexing for arrays. (for start and end)
+```
+  // Correct handling of negative start and end indices
+  if (start < 0) start = Math.max(sz + start, 0);
+  if (end < 0) end = Math.max(sz + end, 0);
+
+  // Ensure start and end are within bounds
+  start = Math.max(start, 0);
+  end = Math.min(end, sz);
+```
+
+---
