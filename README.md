@@ -102,3 +102,7 @@ A proper way to handle negative indexing for arrays. (for start and end)
 ```
 
 ---
+
+Change a 2D array of pairs into an object with key-value pairs like this
+`  for(let pair of pairs)  ans[pair[0]] =pair[1]; ` or by `   for(let [k,v] of pairs)  ans[k] =v; `
+There is another way to get the key from object (the dot notation, .) but that will not work in this because otherwise it will look for ans.pair and then get 0th element from that "pair" key, but it doesn't exist.
