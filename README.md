@@ -106,3 +106,105 @@ A proper way to handle negative indexing for arrays. (for start and end)
 Change a 2D array of pairs into an object with key-value pairs like this
 `  for(let pair of pairs)  ans[pair[0]] =pair[1]; ` or by `   for(let [k,v] of pairs)  ans[k] =v; `
 There is another way to get the key from object (the dot notation, .) but that will not work in this because otherwise it will look for ans.pair and then get 0th element from that "pair" key, but it doesn't exist.
+
+---
+
+# 📘 `call()`, `apply()`, and `bind()` in JavaScript
+
+These three methods are used to **control the value of `this`** inside a function and **invoke functions with a specific context**.
+
+## 🔹 `call()`
+
+**Syntax:**
+
+```js
+func.call(thisArg, arg1, arg2, ...)
+```
+
+**Description:**
+
+* Calls a function **immediately** with a given `this` value.
+* Passes arguments **individually** (comma-separated).
+
+**Example:**
+
+```js
+function greet(greeting) {
+  console.log(`${greeting}, my name is ${this.name}`);
+}
+
+const person = { name: 'Alice' };
+
+greet.call(person, 'Hello'); // Hello, my name is Alice
+```
+
+## 🔹 `apply()`
+
+**Syntax:**
+
+```js
+func.apply(thisArg, [argsArray])
+```
+
+**Description:**
+
+* Similar to `call()`, but arguments are passed as an **array**.
+* Also invokes the function **immediately**.
+
+**Example:**
+
+```js
+function sum(a, b) {
+  return a + b;
+}
+
+console.log(sum.apply(null, [5, 10])); // 15
+```
+
+
+## 🔹 `bind()`
+
+**Syntax:**
+
+```js
+const boundFunc = func.bind(thisArg, arg1, arg2, ...)
+```
+
+**Description:**
+
+* **Does not call** the function immediately.
+* Returns a **new function** with `this` bound to the specified value.
+* Useful for callbacks and event handlers.
+
+**Example:**
+
+```js
+const person = { name: 'Bob' };
+
+function introduce() {
+  console.log(`Hi, I'm ${this.name}`);
+}
+
+const boundIntro = introduce.bind(person);
+boundIntro(); // Hi, I'm Bob
+```
+
+
+
+## 🧩 Key Differences
+
+| Method      | Invokes Function Immediately? | Pass Arguments As | Returns New Function? |
+| ----------- | ----------------------------- | ----------------- | --------------------- |
+| **call()**  | ✅ Yes                         | Individual args   | ❌ No                  |
+| **apply()** | ✅ Yes                         | Array             | ❌ No                  |
+| **bind()**  | ❌ No                          | Individual args   | ✅ Yes                 |
+
+## 💡 Common Use Cases
+
+* Borrowing methods from other objects.
+* Setting `this` in event handlers or callbacks.
+* Partial application (pre-setting some arguments using `bind()`).
+
+---
+
+
