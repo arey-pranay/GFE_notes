@@ -207,4 +207,6 @@ boundIntro(); // Hi, I'm Bob
 
 ---
 
+Checking if a value is between 2 numbers  ` return Math.min(start, end) <= value && value < Math.max(start, end); `
+
 
