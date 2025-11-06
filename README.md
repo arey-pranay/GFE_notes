@@ -209,4 +209,6 @@ boundIntro(); // Hi, I'm Bob
 
 Checking if a value is between 2 numbers  ` return Math.min(start, end) <= value && value < Math.max(start, end); `
 
+---
 
+.includes() is used instead of contains for array in js. and also, .slice(index, numOfElementsToDelete) .pop() and .shift are used to delete elments from a specific index, from end and form start resp.
