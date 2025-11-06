@@ -212,3 +212,98 @@ Checking if a value is between 2 numbers  ` return Math.min(start, end) <= value
 ---
 
 .includes() is used instead of contains for array in js. and also, .slice(index, numOfElementsToDelete) .pop() and .shift are used to delete elments from a specific index, from end and form start resp.
+
+---
+
+# 📘 `map()`, `filter()`, and `reduce()` in JavaScript
+
+These three higher-order functions are commonly used for **transforming and processing arrays**. They allow you to work with data in a more functional, declarative way.
+
+## 🔹 `map()`
+
+**Syntax:**
+
+```js
+const newArray = array.map(callback(currentValue, index, array))
+```
+
+**Description:**
+
+* **Transforms** each element in an array according to a given function.
+* Returns a **new array** with the transformed values.
+* The original array is **not modified**.
+
+**Example:**
+
+```js
+const numbers = [1, 2, 3, 4];
+
+const squaredNumbers = numbers.map(num => num * num);
+
+console.log(squaredNumbers); // [1, 4, 9, 16]
+```
+
+## 🔹 `filter()`
+
+**Syntax:**
+
+```js
+const newArray = array.filter(callback(currentValue, index, array))
+```
+
+**Description:**
+
+* Creates a **new array** with all elements that **pass a test** defined by the provided function.
+* Returns a **filtered array** based on a condition.
+* The original array is **not modified**.
+
+**Example:**
+
+```js
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+
+console.log(evenNumbers); // [2, 4, 6]
+```
+
+## 🔹 `reduce()`
+
+**Syntax:**
+
+```js
+const result = array.reduce(callback(accumulator, currentValue, index, array), initialValue)
+```
+
+**Description:**
+
+* **Reduces** an array to a **single value** by applying a function on each element.
+* The function receives an **accumulator** (the accumulated result) and the **current element** in each iteration.
+* Can be used for **summing values**, **concatenating arrays**, **counting occurrences**, etc.
+* The **initialValue** is optional. If not provided, the first element of the array is used as the initial accumulator.
+
+**Example:**
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+
+console.log(sum); // 15
+```
+
+## 🧩 Key Differences
+
+| Method       | Purpose                                          | Returns      | Mutates Original Array? |
+| ------------ | ------------------------------------------------ | ------------ | ----------------------- |
+| **map()**    | Transforms each element into a new value         | New Array    | ❌ No                    |
+| **filter()** | Filters out elements that don't meet a condition | New Array    | ❌ No                    |
+| **reduce()** | Reduces the array to a single value              | Single Value | ❌ No                    |
+
+## 💡 Common Use Cases
+
+* **map()**: Applying transformations, such as formatting or calculating a new value based on existing data.
+* **filter()**: Extracting a subset of data based on specific conditions, like finding all numbers greater than 5.
+* **reduce()**: Summing numbers, combining data from an array, or counting occurrences.
+
+---
