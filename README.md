@@ -307,3 +307,6 @@ console.log(sum); // 15
 * **reduce()**: Summing numbers, combining data from an array, or counting occurrences.
 
 ---
+
+traversing objects
+` for (const [key, value] of Object.entries(obj)) { ans[key] = fn(value); } `
