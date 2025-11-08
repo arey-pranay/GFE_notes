@@ -262,4 +262,3 @@ In the example above:
 * `try...catch` handles promise rejection.
 
 ---
-Feel free to ask if you want any specific examples or deeper dive into any part of promises!
