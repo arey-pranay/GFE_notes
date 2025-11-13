@@ -1,3 +1,5 @@
+MDN Docs - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/
+
 A Function object's length property indicates how many arguments the function expects, i.e., the number of formal parameters:
 
 Only parameters before the first one with a default value are counted.
@@ -310,3 +312,5 @@ console.log(sum); // 15
 
 traversing objects
 ` for (const [key, value] of Object.entries(obj)) { ans[key] = fn(value); } `
+
+Selection Sort -> It is O(n^2). Start i from 0th element, j will go from i+1 to n, find the smallest in that range, swap i with the min element and then i++;
