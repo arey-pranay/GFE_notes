@@ -314,3 +314,13 @@ traversing objects
 ` for (const [key, value] of Object.entries(obj)) { ans[key] = fn(value); } `
 
 Selection Sort -> It is O(n^2). Start i from 0th element, j will go from i+1 to n, find the smallest in that range, swap i with the min element and then i++;
+
+---
+
+removing duplicates by the use of set in javcascript
+```
+  let ans: Array<T[number]>
+  let s = new Set(array)
+  ans = [...s]
+  return ans;
+```
