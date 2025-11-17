@@ -324,3 +324,40 @@ removing duplicates by the use of set in javcascript
   ans = [...s]
   return ans;
 ```
+
+--- 
+
+
+One attempt of accordion-like functionality.
+
+```
+ const [isOpen, setIsOpen] = useState([false, false, false]);
+  const toggleAccordion = (i)  => {
+    setIsOpen((prev) => {
+      let arr = [...prev];
+      arr[i] = !arr[i];
+      return arr;
+    });
+  }
+  const a =4;
+  const abc = ()=>{};
+  console.log(isOpen);
+  return (
+    <div>
+      <div className="accordion-parent">
+        <div onClick={() => toggleAccordion(0)} className="accordion-heading">
+          HTML{" "}
+          <span
+            aria-hidden={true}
+            className={`accordion-icon ${isOpen[0] && "accordion-icon--rotated"}`}
+          />
+        </div>
+        <div
+          className={`${isOpen[0] ? "accordion-text-open" : "accordion-text-closed"}`}
+        >
+          The HyperText Markup Language or HTML is the standard markup language
+          for documents designed to be displayed in a web browser.
+        </div>
+      </div>
+```'
+---
