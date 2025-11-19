@@ -359,5 +359,11 @@ One attempt of accordion-like functionality.
           for documents designed to be displayed in a web browser.
         </div>
       </div>
-```'
+```
 ---
+
+negative indexing
+  `if(index<0) index = this.length + index;`
+
+ ---
+ 
