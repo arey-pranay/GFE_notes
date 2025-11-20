@@ -366,4 +366,10 @@ negative indexing
   `if(index<0) index = this.length + index;`
 
  ---
- 
+
+ simple polyfill for Array.prototype.map
+ `  for(let i=0; i<this.length;i++) if(this.hasOwnProperty(i))ans[i]=callbackFn.call(thisArg,this[i],i,this);`
+
+ We can even check for sparse arrays using Object.hasOwn(this,i) or return (Object.keys(this)).length == this.length;
+
+ ---
