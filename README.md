@@ -373,3 +373,48 @@ negative indexing
  We can even check for sparse arrays using Object.hasOwn(this,i) or return (Object.keys(this)).length == this.length;
 
  ---
+
+ reduceRight in-built function
+
+ ```
+export default function compose(...fns: Array<Function>): Function {
+  return function (x: any): Function {
+    return fns.reduceRight((result, func) => func(result), x);
+  };
+}
+```
+---
+
+### `reduceRight` in `compose` function
+
+In the given `compose` function, `reduceRight` is employed to apply the functions in the array (`fns`) from right to left, creating a **composed function**. Here's how it works:
+
+1. **Purpose**: The `reduceRight` method iterates over the array of functions (`fns`) in reverse order and applies them cumulatively to an initial value (`x`).
+
+2. **How it works**:
+
+   * `fns.reduceRight((result, func) => func(result), x)`
+   * `reduceRight` takes a callback and an initial value (`x` in this case).
+   * It starts from the **last function** in the array and applies it to the value `x`.
+   * Then it passes the result to the next function, moving towards the first function.
+
+3. **Effect**: This allows for **function composition**, where the rightmost function is applied first, followed by the next one to the left, and so on. In other words, it builds a pipeline that applies functions in the reverse order of their appearance in the `fns` array.
+
+### Example:
+
+```ts
+const add2 = (x: number) => x + 2;
+const multiplyBy3 = (x: number) => x * 3;
+
+const composed = compose(add2, multiplyBy3);
+composed(4); // (4 * 3) + 2 = 14
+```
+
+In this case:
+
+* `multiplyBy3` is applied first, then `add2`.
+
+---
+
+
+
