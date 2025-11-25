@@ -1,5 +1,7 @@
 MDN Docs - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/
 
+---
+
 A Function object's length property indicates how many arguments the function expects, i.e., the number of formal parameters:
 
 Only parameters before the first one with a default value are counted.
