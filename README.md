@@ -419,4 +419,12 @@ In this case:
 ---
 
 
+##  Brian Kernighan's Algorithm
+
+```
+  while(num != 0){
+    ans+= num & 1;
+    num >>>= 1;
+  }
+```
 
