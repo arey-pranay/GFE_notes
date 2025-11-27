@@ -413,14 +413,11 @@ composed(4); // (4 * 3) + 2 = 14
 ```
 
 In this case:
-
 * `multiplyBy3` is applied first, then `add2`.
-
 ---
 
 
-##  Brian Kernighan's Algorithm
-
+## Brian Kernighan's Algorithm
 ```
   while(num != 0){
     ans+= num & 1;
@@ -428,3 +425,17 @@ In this case:
   }
 ```
 
+---
+
+## How to access the number of times a function, or other values outside the function 
+```
+export default function cycle<T>(...values: Array<T>): () => T {
+  let index =0;
+  return () => {
+    const currentValue = values[index];
+    index = (index + 1) % values.length;
+    return currentValue;
+  }
+}
+```
+Practical use of closures.
